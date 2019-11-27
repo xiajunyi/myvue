@@ -1,0 +1,8 @@
+# production stage
+   FROM nginx:1.17.2-alpine as production-stage
+   COPY /dist /usr/share/nginx/html
+   COPY web.nginx.conf /etc/nginx/conf.d/default.conf
+   COPY xjy.key /etc/nginx/conf.d/xjy.key;
+   COPY xjy.pem /etc/nginx/conf.d/xjy.pem
+   EXPOSE 443
+   CMD ["nginx", "-g", "daemon off;"]

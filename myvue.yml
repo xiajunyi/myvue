@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+
+dms-web-lite:
+    image: myvue
+    container_name: xjy-myvue
+    ports:
+      - 443:443
+    networks:
+      - xjynet
+      
+networks:
+  xjynet:
+    external: true
+
+
